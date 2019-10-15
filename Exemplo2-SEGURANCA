@@ -1,0 +1,10 @@
+
+
+package exemplo2;
+
+
+public interface Seguranca {
+    
+    public boolean validar();
+    
+}
