@@ -1,0 +1,39 @@
+package exemplo2;
+
+import javax.swing.JOptionPane;
+
+public class Exemplo2 {
+
+   
+    public static void main(String[] args) {
+        
+        Usuario u = new Usuario();
+        u.setNomeUsuario(JOptionPane.showInputDialog(null,"Qual o nome de Usuario?"));
+        u.setSenha(JOptionPane.showInputDialog(null,"Qual a senha de Usuario?"));
+        u.setNomeCompleto(JOptionPane.showInputDialog(null,"Qual o nome completo de Usuario?"));
+        u.setIdade(Integer.parseInt(JOptionPane.showInputDialog(null,"Qual a idade de Usuario?")));
+        
+        u.formatoSystemVoid();
+        JOptionPane.showMessageDialog(null,u.formatoString());
+        if(u.validar()){
+            JOptionPane.showMessageDialog(null, "Senha correta!\nSeja Bem-Vindx!");
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Senha incorreta!");
+            System.exit(0);
+        }
+            
+        Produto p = new Produto();
+        p.setDescricao(JOptionPane.showInputDialog(null,"Descreva o Produto"));
+        p.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog(null,"Qual a quantidade?")));
+        
+        if(!p.validar()){
+            JOptionPane.showMessageDialog(null, "Quantidade Inválida ");
+        }
+        else{
+        p.formatoSystemVoid();
+        }
+    }
+    
+}
