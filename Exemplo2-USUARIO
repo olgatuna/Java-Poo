@@ -1,0 +1,75 @@
+
+
+package exemplo2;
+
+import javax.swing.JOptionPane;
+
+public class Usuario extends Pessoa implements Imprimivel,Seguranca{
+    
+    private String nomeUsuario;
+    private String senha;
+
+    public Usuario() {
+    }
+
+    public Usuario(String nomeUsuario, String senha, String nomeCompleto, int idade) {
+        super(nomeCompleto, idade);
+        this.nomeUsuario = nomeUsuario;
+        this.senha = senha;
+    }
+
+    public String getNomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public void setNomeUsuario(String nomeUsuario) {
+        this.nomeUsuario = nomeUsuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    @Override
+    public String formatoString() {
+        String msg;
+        msg = "Nome Completo: "+super.nomeCompleto+NLIN+
+                "Idade: "+super.idade+NLIN+
+                "Nome: "+this.nomeUsuario+NLIN+
+                "Senha: "+this.senha;
+        return msg;
+                
+    }
+
+    @Override
+    public void formatoSystemVoid() {
+        String msg;
+        msg = "Nome Completo: "+super.nomeCompleto+NLIN+
+                "Idade: "+super.idade+NLIN+
+                "Nome: "+this.nomeUsuario+NLIN+
+                "Senha: "+this.senha;
+        JOptionPane.showMessageDialog(null,msg);
+        
+    }
+
+    @Override
+    public boolean validar() {
+         return this.senha.equals("abcd");
+    }
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+}
